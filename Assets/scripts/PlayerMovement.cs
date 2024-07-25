@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     //Health
     private int Health
     {
-        get{ return health; }
+        get { return health; }
     }
     public void Damage()
     {
