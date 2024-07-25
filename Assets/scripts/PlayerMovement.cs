@@ -17,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
 
+    [Header("Health")]
+    [SerializeField] private int health;
+
+    [Header("Children collected")]
+    [SerializeField] private int children;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +57,39 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    //Ground Check 
+    //Collision Checks 
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    //Health
+    private int Health
+    {
+        get{ return health; }
+    }
+    public void Damage()
+    {
+        if(health>0)
+        {
+            health--;
+
+            Debug.Log("AJ!");
+        }
+        else if (health==0)
+        {
+            Destroy(gameObject); //TEMPORÄR
+
+            Debug.Log("DÖD");
+
+            //Helst när spelaren dör ska det komma ett GAME OVER, och att spelobjektet disablas.
+            //LÄGG TILL DETTA!
+        }
+    }
+
+    //Collectables
+    public void CollectChild()
+    {
+        children++;
+    }
 }
