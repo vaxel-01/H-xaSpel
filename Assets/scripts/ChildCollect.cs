@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ChildCollect : MonoBehaviour
 {
+    [SerializeField] private AudioClip deathSoundClip;
+
     public Animator animator;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
+
             animator.SetTrigger("TakeChild");
             
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
