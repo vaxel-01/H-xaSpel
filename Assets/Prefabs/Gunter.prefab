@@ -165,4 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283a6e78ec9ad6b4b8892f57a318bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screamSoundClip: {fileID: 8300000, guid: 1749dd928a7a0d44987a0144e157dc01, type: 3}
+  boneSoundClips:
+  - {fileID: 8300000, guid: b8ace2b6406cd2f429d32782203dd9eb, type: 3}
+  - {fileID: 8300000, guid: 8a366d987ff5db24a84e03e4016c3275, type: 3}
   animator: {fileID: 3991695482472085202}
