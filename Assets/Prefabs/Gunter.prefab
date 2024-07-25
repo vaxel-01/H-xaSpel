@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3991695482472085202}
   - component: {fileID: 5855319011895073360}
   - component: {fileID: 6410579215845346869}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6740889378280944148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2155133, y: -0.5896772, z: 0}
-  m_LocalScale: {x: 3.3280473, y: 3.3280473, z: 3.3280473}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.060593605, y: -0.075742066}
+  m_Offset: {x: 0, y: -0.33}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9961872, y: 2.0066957}
+  m_Size: {x: 1, y: 1.33}
   m_EdgeRadius: 0
 --- !u!114 &6410579215845346869
 MonoBehaviour:
