@@ -12,6 +12,7 @@ public class ChildCollect : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            GetComponent<Collider2D>().enabled = false;
             SoundFXManager.instance.PlayRandomSoundFXClip(boneSoundClips, transform, 1f);
             SoundFXManager.instance.PlaySoundFXClip(screamSoundClip, transform, 1f);
 
