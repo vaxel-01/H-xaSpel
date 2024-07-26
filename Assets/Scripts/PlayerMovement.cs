@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    #region 
+    public static PlayerMovement playing;
+    private void Awake()
+    {
+        if(playing==null)
+        {
+            playing=this;
+        }
+    }
+    #endregion
+    
     public CharacterController2D controller;
     public Animator animator;
 
@@ -16,10 +26,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Children collected")]
     public int children;
 
+    [Header("Game manager")]
+
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-
+    
+    void Start()
+    {
+        GameManager.Instance.onPlay.AddListener(PlayerGameStart);
+    }
+    
     void Update()
     {
         // Gets all the information to send to the controller
@@ -60,32 +77,45 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Health
-    private int Health
+    public int Health
     {
         get { return health; }
     }
     public void Damage()
     {
-        if (health > 0)
+        if (health > 1)
         {
             health--;
 
             Debug.Log("AJ!");
         }
-        else if (health == 0)
+        else
         {
-            Destroy(gameObject); //TEMPORÄR
-
-            Debug.Log("DÖD");
-
-            //Helst när spelaren dör ska det komma ett GAME OVER, och att spelobjektet disablas.
-            //LÄGG TILL DETTA!
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+            GameManager.Instance.GameOver();
         }
     }
 
     //Collectables
+    public int Children
+    {
+        get { return children; }
+    }
+
     public void CollectChild()
     {
         children++;
+    }
+
+    //Game Manager saker
+    private void PlayerGameStart()
+    {
+        gameObject.SetActive(true);
+
+        jump=false;
+        crouch=false;
+        
+        health=3;
     }
 }
