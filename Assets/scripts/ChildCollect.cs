@@ -16,6 +16,7 @@ public class ChildCollect : MonoBehaviour
             SoundFXManager.instance.PlaySoundFXClip(screamSoundClip, transform, 1f);
 
             animator.SetTrigger("TakeChild");
+            
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
             player.CollectChild();
         }
